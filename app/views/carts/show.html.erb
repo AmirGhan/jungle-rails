@@ -3,7 +3,11 @@
   <header class="page-header">
     <h1>My Cart</h1>
   </header>
-
+  <% if cart.size == 0 %>
+  <p>
+    Your cart is currently empty, please proceed to <%= link_to 'Home Page', [:root]%>
+  </p>
+  <%else%>
   <div class="panel panel-default items">
     <table class="table table-bordered">
       <thead>
@@ -32,7 +36,6 @@
       </tfoot>
     </table>
   </div>
-
   <div class="row">
     <div class="col-xs-12">
       <%= form_tag orders_path do %>
@@ -50,4 +53,5 @@
     </div>
   </div>
 
+  <%end%>
 </section>
