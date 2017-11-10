@@ -6,23 +6,64 @@
 
   <article class="product-detail">
 
+      <div class="row">
+
+        <div class="col-sm-4">
+          <%= image_tag @product.image.url, class: 'main-img' %>
+        </div>
+
+        <div class="col-sm-8">
+          <dl class="dl-horizontal">
+            <dt>Name</dt>
+            <dd><%= @product.name %></dd>
+            <dt>Description</dt>
+            <dd><%= @product.description %></dd>
+            <dt>Quantity</dt>
+            <dd><%= @product.quantity %></dd>
+            <dt>Price</dt>
+            <dd><%= @product.price %></dd>
+          </dl>
+        </div>
+      </div>
+
+
     <div class="row">
 
       <div class="col-sm-4">
-        <%= image_tag @product.image.url, class: 'main-img' %>
       </div>
 
       <div class="col-sm-8">
-        <dl class="dl-horizontal">
-          <dt>Name</dt>
-          <dd><%= @product.name %></dd>
-          <dt>Description</dt>
-          <dd><%= @product.description %></dd>
-          <dt>Quantity</dt>
-          <dd><%= @product.quantity %></dd>
-          <dt>Price</dt>
-          <dd><%= @product.price %></dd>
-        </dl>
+        <h2>Add Review:</h2>
+        <%= form_for @product.reviews.build, url: product_reviews_path(@product) do |f| %>
+          <p>
+            <%= f.label :rating %>
+            <%= f.select :rating, [1,2,3,4,5], :prompt => 'Select One' %>
+          </p>
+          <p>
+            <%= f.label :description %>
+            <%= f.text_area :description, size: "100x5" %>
+          </p>
+          <%= f.submit "Submit", class: "btn" %>
+        <% end %>
+      </div>
+    </div>
+
+
+    <div class="row">
+
+      <div class="col-sm-4">
+      </div>
+
+      <div class="col-sm-8">
+        <h2>Reviews</h2>
+          <dl class="dl-horizontal">
+            <% @product.reviews.each do |review| %>
+            <dt>Rating</dt>
+            <dd><%= review.rating %></dd>
+            <dt>Description</dt>
+            <dd><%= review.description %></dd>
+            <%end%>
+          </dl>
       </div>
     </div>
 
