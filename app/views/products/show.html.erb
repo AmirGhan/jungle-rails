@@ -34,7 +34,7 @@
 
       <div class="col-sm-8">
         <h2>Add Review:</h2>
-        <%= form_for @product.reviews.build, url: product_reviews_path(@product) do |f| %>
+        <%= form_for Review.new(product: @product), url: product_reviews_path(@product) do |f| %>
           <p>
             <%= f.label :rating %>
             <%= f.select :rating, [1,2,3,4,5], :prompt => 'Select One' %>
@@ -57,7 +57,7 @@
       <div class="col-sm-8">
         <h2>Reviews</h2>
           <dl class="dl-horizontal">
-            <% @product.reviews.each do |review| %>
+            <% @product.reviews.reverse_each do |review| %>
             <dt>Rating</dt>
             <dd><%= review.rating %></dd>
             <dt>Description</dt>
