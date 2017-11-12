@@ -62,6 +62,9 @@
             <dd><%= review.rating %></dd>
             <dt>Description</dt>
             <dd><%= review.description %></dd>
+            <% if current_user && current_user.id == review.user_id %>
+            <dd><%= button_to('Delete', product_review_path(@product, review), method: :delete) %></dd>
+            <% end %>
             <%end%>
           </dl>
       </div>
