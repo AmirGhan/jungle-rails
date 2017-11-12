@@ -4,7 +4,11 @@ A mini e-commerce application built with Rails 4.2 for purposes of teaching Rail
 
 ## Screenshot
 
-!["Example of Jungle main-page"]()
+!["Example of Jungle main-page"](https://github.com/AmirGhan/jungle-rails/blob/master/docs/Main-page.png?raw=true)
+!["Example of registration page"](https://github.com/AmirGhan/jungle-rails/blob/master/docs/Registration.png?raw=true)
+!["Example of managing reviews"](https://github.com/AmirGhan/jungle-rails/blob/master/docs/Managing-reviews.png?raw=true)
+!["Example of shopping cart"](https://github.com/AmirGhan/jungle-rails/blob/master/docs/Order-page.png?raw=true)
+!["Example of order confirmation"](https://github.com/AmirGhan/jungle-rails/blob/master/docs/Order-confirmation.png?raw=true)
 
 
 ## Setup
