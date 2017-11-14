@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Product, type: :model do
   describe 'Validations' do
-    it "should save when all the fields are presence" do
+    it "should save when all the fields are present" do
       @category = Category.new(
         name: "Cell Phone"
       )
